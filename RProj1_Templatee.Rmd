@@ -1,0 +1,81 @@
+---
+title: "R Project 1 - Hello R"
+author: "Regis Ouedraogo"
+date: "1/23/2020"
+output: html_document
+---
+
+### Load packages
+
+```{r load-packages, message=FALSE}
+library(tidyverse) 
+library(datasauRus)
+```
+
+
+### Exercise 1
+
+The datasaurus_dozen file have a data frame with 1846 rows and 3 columns.
+The variables included in the data frame are :
+dataset , 
+x (x values) , 
+y (y values)
+
+
+
+### Exercise 2
+
+
+dino_data <- datasaurus_dozen %>%
+  filter(dataset == "dino")
+ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+
+
+dino_data %>%
+  summarize(r = cor(x, y))
+
+
+### Exercise 3
+
+star_data <- datasaurus_dozen %>%
+filter(dataset == "star")
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +
+geom_point()
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +
+geom_point()
+star_data %>%
+summarize(r = cor(x, y))
+
+
+```{r plot-star}
+```
+
+ this value compared to the r of dino is almost the same 
+ dino= 0.0645
+ star= 0.0630
+```{r cor-star}
+```
+
+### Exercise 4
+
+circle_data <- datasaurus_dozen %>%
+    filter(dataset == "circle")
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+    geom_point()
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+    geom_point()
+circle_data %>%
+    summarize(r = cor(x, y))
+
+```{r}
+```
+ this value compared to the r of dino is almost the same 
+ dino = 0.0645
+ circle = 0.0683
+```{r}
+```
+
+### Exercise 5
+
+(Add code and narrative as needed. To add R chunks either type out the backticks, curly braces, and the letter `r` or use the Insert chunk button above, green C+.)
